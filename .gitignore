@@ -5,6 +5,7 @@
 !.env.defaults
 .netlify
 .redwood/*
+.vscode/*
 !.redwood/README.md
 dev.db*
 dist
