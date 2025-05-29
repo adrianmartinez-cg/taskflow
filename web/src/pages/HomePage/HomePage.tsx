@@ -1,11 +1,20 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes, navigate } from '@redwoodjs/router'
+import { useEffect } from 'react'
+import { useAuth } from 'src/auth'
 import { Metadata } from '@redwoodjs/web'
 
 const HomePage = () => {
+  const { isAuthenticated } = useAuth()
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(routes.task())
+    }
+  }, [isAuthenticated])
+  
   return (
     <>
       <Metadata title="Home" description="Home page" />
-      <div className="flex flex-col items-center justify-center min-h-screen text-center">
+      <div className="flex flex-col items-center justify-center text-center">
         <h1 className="text-3xl font-bold">Bem-vindo ao TaskFlow</h1>
         <p className="mt-2 text-lg text-gray-600">
           Uma ferramenta para organizar suas tarefas. Crie uma conta ou faça login agora mesmo.

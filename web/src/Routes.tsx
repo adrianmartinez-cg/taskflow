@@ -19,10 +19,15 @@ const Routes = () => {
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      <Route notfound page={NotFoundPage} />
       <Set wrap={MainLayout}>
         <Route path="/" page={HomePage} name="home" />
+        <Route notfound page={NotFoundPage} />
       </Set>
+      <PrivateSet unauthenticated="home">
+        <Set wrap={MainLayout}>
+          <Route path="/tasks" page={TaskPage} name="task" />
+        </Set>  
+      </PrivateSet>
     </Router>
   )
 }

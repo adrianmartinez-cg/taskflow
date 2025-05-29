@@ -12,6 +12,7 @@ export const schema = gql`
   type Query {
     tasks: [Task!]! @requireAuth
     task(id: Int!): Task @requireAuth
+    tasksByUser(userId: Int!): [Task!]! @requireAuth
   }
 
   input CreateTaskInput {

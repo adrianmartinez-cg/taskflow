@@ -8,15 +8,26 @@
   },
   "devDependencies": {
     "@redwoodjs/auth-dbauth-setup": "8.6.1",
+    "@redwoodjs/cli-storybook-vite": "8.6.1",
     "@redwoodjs/core": "8.6.1",
     "@redwoodjs/project-config": "8.6.1",
+    "@storybook/addon-docs": "^9.0.0",
+    "@storybook/addon-onboarding": "^9.0.0",
+    "@storybook/react-vite": "^9.0.0",
     "autoprefixer": "^10.4.21",
+    "eslint-plugin-storybook": "^9.0.0",
     "postcss": "^8.5.3",
     "prettier-plugin-tailwindcss": "^0.5.12",
-    "tailwindcss": "^4.1.8"
+    "prop-types": "^15.8.1",
+    "storybook": "^9.0.0",
+    "tailwindcss": "^4.1.8",
+    "vite-plugin-node-polyfills": "^0.23.0"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
+    "extends": [
+      "@redwoodjs/eslint-config",
+      "plugin:storybook/recommended"
+    ],
     "root": true
   },
   "engines": {
@@ -28,5 +39,9 @@
   "packageManager": "yarn@4.6.0",
   "resolutions": {
     "@storybook/react-dom-shim@npm:7.6.20": "https://verdaccio.tobbe.dev/@storybook/react-dom-shim/-/react-dom-shim-8.0.8.tgz"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   }
 }
