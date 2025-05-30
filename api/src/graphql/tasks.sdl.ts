@@ -18,7 +18,6 @@ export const schema = gql`
   input CreateTaskInput {
     title: String!
     description: String
-    status: String!
     userId: Int!
   }
 

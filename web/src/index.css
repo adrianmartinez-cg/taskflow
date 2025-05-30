@@ -28,9 +28,11 @@ body {
 
 main {
   display: flex;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   flex: 1;
 }
 
@@ -49,6 +51,8 @@ h1 {
   justify-content: space-between;
   align-items: center;
   height: 150px;
+  border: 2px solid #0b0069;
+  box-shadow: 2px 2px 5px rgba(146, 146, 146, 0.1);
 }
 
 .layout-header>nav {
@@ -92,11 +96,9 @@ footer {
   background-color: #e3e3e3;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 16px);
+  width: 100%;
   height: 130px;
   padding: 16px;
-  margin-left: 8px;
-  margin-right: 8px;
   margin-top: 8px;
   font-weight: bold;
   border: 2px solid #d1d1d1;
@@ -140,7 +142,7 @@ footer {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 400px;
-  height: 230px;
+  height: 260px;
 }
 
 .task-card-edit-form form {
@@ -148,4 +150,16 @@ footer {
   flex-direction: column;
   gap: 8px;
   justify-content: space-between;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* 🔹 Tela escurecida */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

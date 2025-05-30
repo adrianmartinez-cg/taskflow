@@ -13,15 +13,15 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         <header className="layout-header">
           <h1>TaskFlow</h1>
           {
-            isAuthenticated ? (
+            isAuthenticated && (
               <nav className="layout-nav">
                 <div>Logged in as</div>
                 <span>{currentUser.email}</span>
                 <button className="purple-button" type="button" onClick={logOut}>Log out</button>
               </nav>
-            ) : null
+            )
           }
-          
+
         </header>
         <main>{children}</main>
         <footer>© 2025</footer>

@@ -26,7 +26,7 @@ export const QUERY: TypedDocumentNode<
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Nenhuma tarefa cadastrada.</div>
+export const Empty = () => <div className='flex items-center flex-1'><p>Nenhuma tarefa cadastrada.</p></div>
 
 export const Failure = ({
   error,
